@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+<pre><code>
+class Person {
+    var name: String = ""
+    let birth: Int
+    var mbti: String
+    var age: Int {
+        get{
+            return 2026 - birth
+        }
+    }
+    init(name: String, birth: Int, mbti: String){
+        self.name = name
+        self.birth = birth
+        self.mbti = mbti
+    }
+    
+    func eat(food: String) {
+        print("\(food)를 먹는다.")
+    }
+    
+    func sleep() {
+        print("잠을 잔다.")
+    }
+}
+class Developer: Person {
+    var type: String
+    
+    init(type: String, name: String, birth: Int, mbti: String){
+        self.type = type
+        super.init(name: name, birth: birth, mbti: mbti)
+    }
+}
+var seonmi = Developer(type: "", name: "유선미", birth: 1996, mbti: "ENFJ")
+extension Person {
+    func experiment(study: String) {
+        print("\(study)를 실험한다.")
+    }
+    
+    func watchMovie(movie: String){
+        print("\(movie) 영화를 본다.")
+    }
+}
+seonmi.experiment(study: "잠재 웹사이트")
+seonmi.watchMovie(movie: "매트릭스")
+</code></pre>
+
+</body>
+</html>
